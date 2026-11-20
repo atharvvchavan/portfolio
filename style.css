@@ -1,2 +1,179 @@
-body { font-family: sans-serif; max-width: 600px; margin: 40px auto; }
-h1 { color: #2563eb; }
+/* Portfolio styles: only this file changes, index.html stays the same. */
+
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500&family=Instrument+Serif&display=swap");
+
+:root {
+  --paper: #eef1ee;
+  --ink: #17211d;
+  --muted: #5d6c66;
+  --line: #cfd8d3;
+  --accent: #2e6f5e;
+  --tint: #d6e4dd;
+
+  --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #101614;
+    --ink: #e7eeea;
+    --muted: #8d9d96;
+    --line: #27332e;
+    --accent: #7fc4ae;
+    --tint: #1a2a24;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 42rem;
+  min-height: 100vh;
+  padding: clamp(4rem, 14vh, 9rem) clamp(1.5rem, 6vw, 2.5rem) 5rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* The one visual: a soft disc with a thin ring offset over it. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body::before {
+  width: min(46vw, 30rem);
+  aspect-ratio: 1;
+  top: -8vw;
+  right: -10vw;
+  background: var(--tint);
+}
+
+body::after {
+  width: min(40vw, 26rem);
+  aspect-ratio: 1;
+  top: 3vw;
+  right: 4vw;
+  border: 1px solid var(--accent);
+  opacity: 0.45;
+}
+
+/* Headline */
+h1 {
+  margin: 0 0 1.75rem;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(3rem, 10vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  animation: arrive 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes arrive {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+}
+
+/* Intro line */
+p {
+  margin: 0 0 5rem;
+  max-width: 28rem;
+  font-size: 1.25rem;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* Section title with a rule running out to the edge */
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 0.5rem;
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--muted);
+}
+
+h2::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* Project list */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  position: relative;
+  padding: 1.25rem 0 1.25rem 1.75rem;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.125rem;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  translate: 0 -50%;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+li:hover::before {
+  background: var(--accent);
+}
+
+/* Ready for links you add later */
+a {
+  color: var(--accent);
+  text-underline-offset: 0.25em;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  h1 {
+    animation: none;
+  }
+  li::before {
+    transition: none;
+  }
+}
