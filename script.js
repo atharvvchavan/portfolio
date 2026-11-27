@@ -51,7 +51,7 @@ const CONFIG = {
     "I am a beginner in DevOps, learning step by step by building projects on my own laptop and a Linux VM. I start small, break things on purpose, and write down what I learn.",
     "So far I have worked with Linux and Bash, Docker and Docker Compose, and GitHub Actions. I am looking for a first role where I can keep learning from a team."
   ],
-  clients: ["Linux", "Bash", "Docker", "Docker Compose", "GitHub Actions", "Nginx", "Python", "Git"],
+  clients: ["Linux", "Bash", "Docker", "Docker Compose", "GitHub Actions", "Git", "Python", "Html", "CSS", "JavaScript"],
   choices: ["Job opportunity", "Collaboration"],
   footerNote: "Learning in public. Open to remote and local roles."
 };
