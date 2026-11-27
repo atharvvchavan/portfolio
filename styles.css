@@ -65,7 +65,7 @@ p { margin: 0 0 1em; max-width: 62ch; }
 .row:hover .meta { color: var(--color-ink); }
 
 /* statement */
-.statement { border-top: var(--rule-bar) solid var(--color-rule); padding-top: clamp(24px, 4vw, 38px); }
+.statement { border-top: var(--rule-bar) solid var(--color-rule); padding-top: clamp(20px, 4vw, 38px); }
 .statement .display { font-size: clamp(2.2rem, 8vw, 8rem); }
 .statement .by { margin: 18px 0 0; }
 
