@@ -1,99 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Atharv Chavan | DevOps portfolio</title>
-  <meta name="description" content="Aspiring DevOps engineer building and automating Linux servers and CI/CD pipelines.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Atharv Chavan: DevOps Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <header>
-    <h1>Hi, I’m Atharv Naresh Chavan</h1>
-    <p class="lead">Aspiring DevOps engineer. I build and automate Linux servers and deployment pipelines, and I’m looking for an entry-level DevOps or cloud role.</p>
-    <!-- EDIT: replace the LinkedIn and email placeholders with your real ones -->
-    <nav class="links">
-      <a href="https://github.com/atharvvchavan">GitHub</a>
-      <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-      <a href="mailto:atharvv5989@email.com">Email</a>
-    </nav>
-  </header>
-
+<div class="wrap">
+  <header><nav class="cells head" id="head"></nav></header>
   <main>
-    <section>
-      <h2>About</h2>
-      <p>I learn DevOps by building things end to end: setting up a server, locking it down, and making code go live without copying files by hand. When something breaks, I work out why and write down the fix.</p>
-    </section>
-
-    <section>
-      <h2>Skills</h2>
-      <dl>
-        <dt>Linux and servers</dt>
-        <dd>Ubuntu, Bash scripting, SSH keys, ufw firewall, cron</dd>
-        <dt>Containers and CI/CD</dt>
-        <dd>Docker, Nginx, GitHub Actions, self-hosted runners</dd>
-        <dt>Version control</dt>
-        <dd>Git, GitHub</dd>
-        <dt>Environment</dt>
-        <dd>VirtualBox, VS Code, Windows and Linux terminals</dd>
-      </dl>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-
-      <article>
-        <h3>Hardened Linux server with automated chores</h3>
-        <p>An Ubuntu server running in VirtualBox, set up the way a production server would be: key-only access, a firewall, and scheduled maintenance.</p>
-        <ul>
-          <li>Set up SSH key login and turned off password and root login</li>
-          <li>Configured the ufw firewall to allow only SSH and web traffic</li>
-          <li>Wrote three Bash scripts for backups, log cleanup, and a CPU, memory and disk health check</li>
-          <li>Scheduled all three with cron and checked their logs</li>
-        </ul>
-        <p class="tools">Built with Ubuntu, Bash, SSH, cron, ufw, VirtualBox</p>
-      </article>
-
-      <article>
-        <h3>Portfolio site with automatic deployment</h3>
-        <p>This site is the project. Pushing to GitHub starts a pipeline that builds a Docker image and replaces the running site on my server, with no manual copying.</p>
-        <ul>
-          <li>Packaged the site with Nginx in a Docker image</li>
-          <li>Wrote a GitHub Actions workflow that rebuilds and redeploys on every push to main</li>
-          <li>Installed a self-hosted runner inside my VM so the pipeline can reach it</li>
-          <li>Kept the repository private, because a self-hosted runner executes code from the repo</li>
-        </ul>
-        <p class="tools">Built with Git, GitHub Actions, Docker, Nginx</p>
-      </article>
-    </section>
-
-    <section>
-      <h2>What went wrong, and how I fixed it</h2>
-      <ul>
-        <li>SSH warned that the host key had changed after I rebuilt the VM. I confirmed it was my own machine, then removed the old fingerprint with <code>ssh-keygen -R</code>.</li>
-        <li>The VM installer skipped the SSH server. I installed OpenSSH myself and enabled it with <code>systemctl</code>.</li>
-        <li>I first downloaded the Windows build of the GitHub runner into a Linux VM, which failed. Choosing the Linux build fixed it.</li>
-        <li>Docker could not connect to its engine on my laptop. I learned the command and the engine are separate, and ran the build inside the VM instead.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Learning next</h2>
-      <p>Deploying to AWS (EC2, S3 and CloudFront), pushing images to Docker Hub, Terraform for infrastructure as code, and Kubernetes.</p>
-    </section>
-
-    <section>
-      <h2>Contact</h2>
-      <p>I’m open to entry-level DevOps and cloud roles. Email is the best way to reach me.</p>
-      <nav class="links">
-        <a href="mailto:atharvv5989@email.com">atharvv5989@email.com</a>
-        <a href="https://github.com/atharvvchavan">github.com/atharvvchavan</a>
-      </nav>
-    </section>
+    <div class="cells hero" id="hero"></div>
+    <section id="work"><div class="sec-head"><h2>Work</h2><span class="muted" id="work-count"></span></div><div class="index" id="index"></div></section>
+    <section class="statement" id="statement"></section>
+    <section><div class="cells bento" id="bento"></div></section>
+    <section id="about"><div class="cells about" id="about-cells"></div></section>
+    <section id="contact"><div class="sec-head"><h2>Contact</h2></div><form class="cells form" id="form" novalidate></form></section>
   </main>
+</div>
+<footer><div class="wrap" id="foot"></div></footer>
 
-  <footer>© 2026 Atharv Chavan</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
