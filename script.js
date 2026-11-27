@@ -1,6 +1,6 @@
 const CONFIG = {
   name: "Atharv Chavan",
-  role: "Aspiring DevOps Engineer",
+  role: "DevOps Engineer",
   email: "chavanatharvv@gmail.com",
   github: "https://github.com/atharvvchavan",
   linkedin: "https://www.linkedin.com/in/atharv-chavan-9441a2363?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
